@@ -78,3 +78,22 @@ def find_matching_data(matrix, target):
     # Concatenate the results and return them
     return [result for sublist in results for result in sublist]
 
+
+def encontrar_terceros_datos(matriz):
+    terceros_datos = []
+    for fila in matriz:
+        # Comprobamos si la fila tiene al menos tres elementos
+        if len(fila) < 3:
+            terceros_datos.append(None)
+        else:
+            print(fila[5]," ",fila[6]," ",fila[7],"\n")
+            #terceros_datos.append(fila[2])
+    return terceros_datos
+
+
+def buscar_persona(matriz, exp):
+    mn = []
+    for i in range(len(matriz)):
+        if exp in matriz[i]:
+            mn.append(matriz[i])
+    return mn

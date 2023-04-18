@@ -83,3 +83,25 @@ def find_least_x(data, x):
     least_x = sorted(result_dict.items(), key=lambda item: item[1])[:int(x)]
     return least_x
 
+
+
+def menos_comunes(nombres, x):
+    contador = Counter(nombres)
+    menos_comunes = sorted(contador.items(), key=lambda x: x[1])[:int(x)]
+    return menos_comunes
+
+
+def mas_comunes(nombres, x):
+    contador = Counter(nombres)
+    mas_comunes = sorted(contador.items(), key=lambda x: x[1], reverse=True)[:int(x)]
+    return mas_comunes
+
+def buscar_cuartos_campos(matriz):
+    cuartos_campos = []
+    for fila in matriz:
+        if len(fila) >= 4:
+            cuarto_campo = fila[5]
+            cuartos_campos.append(cuarto_campo)
+        else:
+            cuartos_campos.append(None)
+    return cuartos_campos
