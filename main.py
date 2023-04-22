@@ -3,6 +3,7 @@ from nombres_comunes import *
 import distritos_mas_votantes
 import datetime
 import cant_votantes_prov
+import cant_votantes
 matriz = []
 with open("PADRON_COMPLETO.txt", "r") as archivo:
     for linea in archivo:
@@ -17,15 +18,15 @@ while op!="0":
     if op == "a":
         print ("x")
     elif op == "b":
-        cant_votantes_prov.seleccionarModo(matriz)
+        cant_votantes.seleccionarModo(matriz,0)
     elif op == "c":
-        print ("x")
+        cant_votantes.seleccionarModo(matriz,3)
     elif op == "d":
         print ("x")
     elif op == "e":
         print ("x")
     elif op == "f":
-        distritos_mas_votantes.seleccionarModo(matriz)
+        cant_votantes.seleccionarModo(matriz,1)
     elif op == "g":
         print ("x")
     elif op == "h":
