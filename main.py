@@ -1,7 +1,8 @@
 from expiracion import *
 from nombres_comunes import *
+import distritos_mas_votantes
 import datetime
-
+import cant_votantes_prov
 matriz = []
 with open("PADRON_COMPLETO.txt", "r") as archivo:
     for linea in archivo:
@@ -16,7 +17,7 @@ while op!="0":
     if op == "a":
         print ("x")
     elif op == "b":
-        print ("x")   
+        cant_votantes_prov.seleccionarModo(matriz)
     elif op == "c":
         print ("x")
     elif op == "d":
@@ -24,7 +25,7 @@ while op!="0":
     elif op == "e":
         print ("x")
     elif op == "f":
-        print ("x")
+        distritos_mas_votantes.seleccionarModo(matriz)
     elif op == "g":
         print ("x")
     elif op == "h":
