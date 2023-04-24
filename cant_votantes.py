@@ -13,12 +13,13 @@ import time
 
 #Seleccionar el modo de ejecucion del programa
 def seleccionarModo(matriz,op):
-    opciones = {3:"Cantones",1:"Distritos"}
+    opciones = {2:"Cantones",1:"Distritos",}
     print("1. Modo Secuencial\n2. Modo Multiprocesamiento\n3. Ambos\n4. Salir")
     select = int(input("Ingrese la opcion que desea:"))
     cantidad = 0
-    
-    if op == 1 or op == 2:
+    if select == 4:
+        return
+    if  (op == 1 or op == 2):
         cantidad = int(input("Ingrese la cantidad de "+opciones[op]+" que quiere imprimir:" ))
     if (select == 1):
         metodo_secuencial(matriz,op,cantidad)
@@ -89,9 +90,9 @@ def metodo_multicore(matriz,op,cantidad):
     def thread_function(section):
         
         for x in section:
-            if op == 1:
+            if op == 1 or op == 4:
                 valor = x[1]
-            elif op == 3:
+            elif op == 3 or op == 2:
                 valor = x[1][0:3]
             elif op == 0:
                 valor = x[1][0]
