@@ -1,9 +1,8 @@
 from expiracion import *
 from nombres_comunes import *
-import distritos_mas_votantes
 import datetime
-import cant_votantes_prov
 import cant_votantes
+import apellido_particular
 matriz = []
 with open("PADRON_COMPLETO.txt", "r") as archivo:
     for linea in archivo:
@@ -22,9 +21,9 @@ while op!="0":
     elif op == "c":
         cant_votantes.seleccionarModo(matriz,3)
     elif op == "d":
-        print ("x")
+        cant_votantes.seleccionarModo(matriz,4)
     elif op == "e":
-        print ("x")
+        cant_votantes.seleccionarModo(matriz,2)
     elif op == "f":
         cant_votantes.seleccionarModo(matriz,1)
     elif op == "g":
@@ -62,7 +61,7 @@ while op!="0":
     elif op == "i":
         print ("x")
     elif op == "j":
-        print ("x")
+        apellido_particular.seleccionarModo(matriz)
     elif op == "k":
         n = input("Ingrese la cantidad de nombres que desea ver: ")
         print("Los nombres más comunes y la cantidad de veces que aparecen son los siguientes:")
