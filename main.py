@@ -52,6 +52,7 @@ while op!="0":
             print(get_third_data(person))
             tiempo = final-inicio
             print("El tiempo de ejecucion fue de: "+str(tiempo))
+        input("Presione Enter para continuar...")
 
 
 
@@ -108,9 +109,77 @@ while op!="0":
             print("Y la diferencia entre el primero y segundo es de: " + str(diferencia))
             tiempo = final-inicio
             print("El tiempo de ejecucion fue de: "+str(tiempo))
-
+        input("Presione Enter para continuar...")
     elif op == "l":
-        print ("x")
+
+
+
+
+        n = input("Ingrese la cantidad de apellidos que desea ver: ")
+        print("Los apellidos más comunes y la cantidad de veces que aparecen son los siguientes:")
+        op2 = input("Ingrese 1 si quiere que sea secuencial o 2 si quiere que sea paralelo: ")
+        inicio = datetime.datetime.now()
+
+
+        p_apellidos = buscar_sexto_campos(matriz)
+        s_apellidos = buscar_septimo_campos(matriz)
+
+        apellidos = p_apellidos + s_apellidos
+        
+        if op2 == "1":
+            top = mas_comunes(apellidos, n)
+            bool = False
+            for i in range(len(top)):
+                for j in range(len(top[0])):
+                    print(top[i][j], end=" ")
+                    if bool == True:
+                        print() 
+                    if bool == True:
+                        bool = False
+                    elif bool == False:
+                        bool = True
+            final = datetime.datetime.now()
+            primero = top[0][1]
+            segundo = top[1][1]
+            diferencia = primero-segundo
+            tiempo = final-inicio
+            print("El tiempo de ejecucion fue de: "+str(tiempo))
+        elif op2 == "2":
+            top = find_top_x(apellidos, n)
+            bool = False
+            for i in range(len(top)):
+                for j in range(len(top[0])):
+                    print(top[i][j], end=" ")
+                    if bool == True:
+                        print() 
+                    if bool == True:
+                        bool = False
+                    elif bool == False:
+                        bool = True
+            final = datetime.datetime.now()
+            primero = top[0][1]
+            segundo = top[1][1]
+            diferencia = primero-segundo
+            tiempo = final-inicio
+            print("El tiempo de ejecucion fue de: "+str(tiempo))
+        input("Presione Enter para continuar...")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     elif op == "m":
         n = input("Ingrese la cantidad de nombres que desea ver: ")
         op2 = input("Ingrese 1 si quiere que sea secuencial o 2 si quiere que sea paralelo: ")
@@ -155,6 +224,7 @@ while op!="0":
             print("Y la diferencia entre el primero y segundo es de: " +str(diferencia))
             tiempo = final-inicio
             print("El tiempo de ejecucion fue de: "+str(tiempo))
+        input("Presione Enter para continuar...")
     elif op == "n":
         print ("x")
     

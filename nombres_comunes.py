@@ -105,3 +105,25 @@ def buscar_cuartos_campos(matriz):
         else:
             cuartos_campos.append(None)
     return cuartos_campos
+
+
+
+def buscar_sexto_campos(matriz):
+    cuartos_campos = []
+    for fila in matriz:
+        if len(fila) >= 4:
+            cuarto_campo = fila[6]
+            cuartos_campos.append(cuarto_campo)
+        else:
+            cuartos_campos.append(None)
+    return cuartos_campos
+
+def buscar_septimo_campos(matriz):
+    cuartos_campos = []
+    for fila in matriz:
+        if len(fila) >= 4:
+            cuarto_campo = fila[7]
+            cuartos_campos.append(cuarto_campo)
+        else:
+            cuartos_campos.append(None)
+    return cuartos_campos
