@@ -1,6 +1,7 @@
 from os import system
 from expiracion import *
 from nombres_comunes import *
+import nombre_particular
 import datetime
 import cant_votantes
 import apellido_particular
@@ -62,7 +63,7 @@ while op!="0":
 
 
     elif op == "i":
-        print ("x")
+        nombre_particular.seleccionarModo(matriz)
     elif op == "j":
         apellido_particular.seleccionarModo(matriz)
     elif op == "k":
