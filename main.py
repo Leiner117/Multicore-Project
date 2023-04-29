@@ -5,6 +5,7 @@ import nombre_particular
 import datetime
 import cant_votantes
 import apellido_particular
+import cant_tipoCel
 # -*- coding: utf-8 -*-
 matriz = []
 with open("PADRON_COMPLETO.txt", "r") as archivo:
@@ -30,7 +31,7 @@ while op!="0":
     elif op == "f":
         cant_votantes.seleccionarModo(matriz,1)
     elif op == "g":
-        print ("x")
+        cant_tipoCel.seleccionarModo(matriz)
     elif op == "h":
 
 
