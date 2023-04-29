@@ -3,6 +3,7 @@ from nombres_comunes import *
 import datetime
 import cant_votantes
 import apellido_particular
+# -*- coding: utf-8 -*-
 matriz = []
 with open("PADRON_COMPLETO.txt", "r") as archivo:
     for linea in archivo:
