@@ -1,4 +1,5 @@
 import multiprocessing
+from os import system
 import threading
 import time
 # -*- coding: utf-8 -*-
@@ -6,7 +7,7 @@ provincias = {1:"San Jose",2:"Alajuela",3:"Cartago",4:"Heredia",5:"Guanacaste",6
 
 #Funcion que se encarga de seleccionar el modo de ejecucion del codigo 
 def seleccionarModo(matriz):
-    
+    system("cls")
     print("1. Modo Secuencial\n2. Modo Multiprocesamiento\n3. Ambos\n4. Salir")
     select = int(input("Ingrese la opcion que desea:"))
     op,apellido,prov = select_opcion()
@@ -16,6 +17,7 @@ def seleccionarModo(matriz):
     if (select == 1):
         metodo_secuencial(matriz,apellido,op,prov)
     elif (select == 2):
+        
         metodo_multicore(matriz,apellido,op,prov)
     elif (select == 3):
         metodo_secuencial(matriz,apellido,op,prov)
@@ -23,7 +25,8 @@ def seleccionarModo(matriz):
 
 #Funcion que se encarga de seleccionar lo que se quiere buscar en la funcion 
 def select_opcion():
-    print("Desea buscar el:\n1.Primer Apellido\n2.Segundo Apellido\n3. Ambos\n4. Ambos con nombre")
+    system("cls")
+    print("Desea buscar el:\n1.Primer Apellido\n2.Segundo Apellido\n3.Ambos\n4.Ambos con nombre")
     try:
         select = int(input("==> "))
     except:
@@ -58,19 +61,19 @@ def metodo_secuencial(matriz,nombre,op,prov):
             
             if op == 1:
                 apellido2 = str(i[6])
-                apellido2 = "".join(apellido2.split())
+                apellido2 = apellido2.strip()
                 if nombre == apellido2:
                     cont = cont+1
             elif op == 2:
                 apellido2 = str(i[7])
-                apellido2 = "".join(apellido2.split())
+                apellido2 = apellido2.strip()
                 if nombre == apellido2:
                     cont = cont+1
             elif op == 3:
                 apellido1 = str(i[6])
-                apellido1 = "".join(apellido1.split())
+                apellido1 = apellido1.strip()
                 apellido2 = str(i[7])
-                apellido2 = "".join(apellido2.split())
+                apellido2 = apellido2.strip()
                 apellidos = apellido1 +" "+apellido2
                 if nombre == apellidos:
                     cont = cont+1
@@ -88,6 +91,7 @@ def metodo_secuencial(matriz,nombre,op,prov):
 
     
     fin = time.time()
+    system("cls")
     if prov == 9:
         print("Hay "+str(cont)+" personas con el apellido "+nombre+" en todo el pais")
     else:
@@ -95,6 +99,7 @@ def metodo_secuencial(matriz,nombre,op,prov):
         print("Hay "+str(cont)+" personas con el apellido "+nombre+" en la provincia de "+provincias[prov])
     print("El codigo duro: "+str(fin-inicio))
 
+    input("Presione Enter para continuar...")
 
 
 
@@ -103,14 +108,14 @@ def metodo_secuencial(matriz,nombre,op,prov):
 
 
 
-
+#Metodo multiprocesaminto utilizando hilos 
 def metodo_multicore(matriz,nombre,op,prov):
     print("Metodo Multicore")
     inicio = time.time()
     cont = {}
     cont[nombre] = 0
     # número de hilos que se van a utilizar
-    num_threads = 4
+    num_threads = 3
     def thread_function(section,apellido,op):
         
         for i in section:
@@ -118,19 +123,19 @@ def metodo_multicore(matriz,nombre,op,prov):
 
                 if op == 1:
                     apellido2 = str(i[6])
-                    apellido2 = "".join(apellido2.split())
+                    apellido2 = apellido2.strip()
                     if apellido == apellido2:
                         cont[apellido] = cont[apellido]+1
                 elif op == 2:
                     apellido2 = str(i[7])
-                    apellido2 = "".join(apellido2.split())
+                    apellido2 = apellido2.strip()
                     if apellido == apellido2:
                         cont[apellido] = cont[apellido]+1
                 elif op == 3:
                     apellido1 = str(i[6])
-                    apellido1 = "".join(apellido1.split())
+                    apellido1 = apellido1.strip()
                     apellido2 = str(i[7])
-                    apellido2 = "".join(apellido2.split())
+                    apellido2 = apellido2.strip()
                     apellidos = apellido1 +" "+apellido2
                     if apellido == apellidos:
                         cont[apellido] =cont[apellido]+1
@@ -172,4 +177,3 @@ def metodo_multicore(matriz,nombre,op,prov):
 
 
 
-    

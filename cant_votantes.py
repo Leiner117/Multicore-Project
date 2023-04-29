@@ -1,3 +1,4 @@
+from os import system
 import threading
 import time
 #Codigo unifica las consultas b,c,f ya que el codigo de las 3 es muy parecido
@@ -13,6 +14,7 @@ import time
 
 #Seleccionar el modo de ejecucion del programa
 def seleccionarModo(matriz,op):
+    system("cls")
     opciones = {2:"Cantones",1:"Distritos",}
     print("1. Modo Secuencial\n2. Modo Multiprocesamiento\n3. Ambos\n4. Salir")
     select = int(input("Ingrese la opcion que desea:"))
@@ -121,3 +123,4 @@ def metodo_multicore(matriz,op,cantidad):
     imprimir(dic,op,cantidad)
     fin = time.time()
     print("El codigo duro: "+str(fin-inicio))
+    input("Presione Enter para continuar...")

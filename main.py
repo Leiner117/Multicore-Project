@@ -1,3 +1,4 @@
+from os import system
 from expiracion import *
 from nombres_comunes import *
 import datetime
@@ -11,7 +12,7 @@ with open("PADRON_COMPLETO.txt", "r") as archivo:
         matriz.append(campos)
 op = str
 while op!="0":
-    
+    system("cls")
     print("Bienvenido al sistema del padrón electoral \nIngrese la acción que desea llevar a cabo: \na. Búsqueda de una persona a partir de sus datos \nb. Cantidad de votantes por provincia \nc. Cantidad de votantes por cantón \nd. Cantidad de votantes por distritos \ne. Los N cantones con más votantes registrados\nf. Los N distritos con más votantes registrados\ng. Cantidad de personas por tipo de identificación \nh. Personas cuya identificación expira en una fecha suministrada por el usuario \ni. Cantidad de personas con un nombre en particular\nj. Cantidad de personas con un apellido en particular\nk. Los N nombres más comunes \nl. Los N apellidos más comunes \nm. Los N nombres menos comunes \nn. Una ejecución completa de las consultas")
     op = input("Ingrese su seleccion: ")
 
