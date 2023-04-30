@@ -32,9 +32,6 @@ while op!="0":
     elif op == "g":
         print ("x")
     elif op == "h":
-
-
-
         anio = input("Ingrese el año que desea buscar: ") 
         mes = input("Ingrese el mes que desea buscar: ")
         dia = input("Ingrese el día que desea buscar: ")
@@ -54,14 +51,6 @@ while op!="0":
             tiempo = final-inicio
             print("El tiempo de ejecucion fue de: "+str(tiempo))
         input("Presione Enter para continuar...")
-
-
-
-
-
-
-
-
     elif op == "i":
         nombre_particular.seleccionarModo(matriz)
     elif op == "j":
@@ -112,10 +101,6 @@ while op!="0":
             print("El tiempo de ejecucion fue de: "+str(tiempo))
         input("Presione Enter para continuar...")
     elif op == "l":
-
-
-
-
         n = input("Ingrese la cantidad de apellidos que desea ver: ")
         print("Los apellidos más comunes y la cantidad de veces que aparecen son los siguientes:")
         op2 = input("Ingrese 1 si quiere que sea secuencial o 2 si quiere que sea paralelo: ")
