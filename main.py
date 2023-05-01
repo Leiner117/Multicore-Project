@@ -216,29 +216,25 @@ while op!="0":
         mes = datetime.date.month
         dia = datetime.date.day
         fecha = str(anio) + str(mes) + str(dia)
-        fecha = '20230416'
-        if str(fecha) in matriz:
-            print("La fecha seleccionada no se encuentra")
-        else:
-            person = find_matching_data(matriz,fecha)
-            print(get_third_data(person))
-            print ("Consulta K")
-            n = 10
-            print("Los nombres más comunes y la cantidad de veces que aparecen son los siguientes:")
-            nombres = buscar_cuartos_campos(matriz)
-            top = find_top_x(nombres, n)
-            bool = False
-            for i in range(len(top)):
-                for j in range(len(top[0])):
-                    print(top[i][j], end=" ")
-                    if bool == True:
-                        print() 
-                    if bool == True:
-                        bool = False
-                    elif bool == False:
-                        bool = True
-            primero = top[0][1]
-            segundo = top[1][1]
+        person = find_matching_data(matriz,fecha)
+        print(get_third_data(person))
+        print ("Consulta K")
+        n = 10
+        print("Los nombres más comunes y la cantidad de veces que aparecen son los siguientes:")
+        nombres = buscar_cuartos_campos(matriz)
+        top = find_top_x(nombres, n)
+        bool = False
+        for i in range(len(top)):
+            for j in range(len(top[0])):
+                print(top[i][j], end=" ")
+                if bool == True:
+                    print() 
+                if bool == True:
+                    bool = False
+                elif bool == False:
+                    bool = True
+        primero = top[0][1]
+        segundo = top[1][1]
         input("Presione Enter para continuar...")
         print ("Consulta L")
 

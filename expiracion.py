@@ -7,7 +7,11 @@ def get_third_data(matrix):
 
     # Divide the matrix into n equal parts
     chunk_size = len(matrix) // num_threads
-    chunks = [matrix[i:i+chunk_size] for i in range(0, len(matrix), chunk_size)]
+    if chunk_size == 0:
+        
+        return ("Dato no encontrado")
+    else:
+        chunks = [matrix[i:i+chunk_size] for i in range(0, len(matrix), chunk_size)]
 
     # If there's a smaller fragment, add it to the last chunk
     if len(chunks[-1]) < chunk_size and len(chunks) > 1:
