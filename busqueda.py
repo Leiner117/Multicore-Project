@@ -42,7 +42,7 @@ def metodo_multicore(matriz, busqueda):
     num_threads = 4
 
     def thread_function(section,busqueda):
-        for i in matriz:
+        for i in section:
             for elemento in i:
                 if busqueda.lower() in str(elemento).lower():
                     print(i)
