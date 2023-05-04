@@ -21,7 +21,7 @@ while op!="0":
 
     if op == "a": 
         busqueda.seleccionarModo(matriz)
-        input("")
+        input("Presione Enter para continuar...")
     elif op == "b":
         cant_votantes.seleccionarModo(matriz,0)
     elif op == "c":

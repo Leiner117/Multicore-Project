@@ -168,12 +168,13 @@ def metodo_multicore(matriz,nombre,op,prov):
         
     
     fin = time.time()
+    system("cls")
     if prov == 9:
         print("Hay "+str(cont[nombre])+" personas con el apellido "+nombre+" en todo el pais")
     else:
 
         print("Hay "+str(cont[nombre])+" personas con el apellido "+nombre+" en la provincia de "+provincias[prov])
     print("El codigo duro: "+str(fin-inicio))
-
+    input("Presione Enter para continuar...")
 
 

@@ -88,7 +88,7 @@ def metodo_multicore(matriz,op,cantidad):
     inicio = time.time()
     dic = {}
     # número de hilos que se van a utilizar
-    num_threads = 4
+    num_threads = 3
     def thread_function(section):
         
         for x in section:

@@ -5,10 +5,9 @@ def seleccionarModo(matriz):
     
     print("1. Modo Secuencial\n2. Modo Multiprocesamiento\n3. Ambos\n4. Salir")
     select = int(input("Ingrese la opcion que desea:"))
-    busqueda = select_busqueda()
     if select == 4:
         return
-    
+    busqueda = select_busqueda()
     if (select == 1):
         metodo_secuencial(matriz,busqueda)
     elif (select == 2):
@@ -22,14 +21,21 @@ def select_busqueda():
     busqueda = input("==> ").upper()
     return busqueda
 
+def imprimir_datos(persona):
+    print("*************************************************")
+    print("Cedula: "+persona[0])
+    print("Patron electoral: "+persona[1])
+    print("Fecha de vencimiento: "+persona[2])
+    print("Nombre completo: "+str(persona[5].split())+" "+str(persona[6].split())+" "+str(persona[7].split()))
+
 def metodo_secuencial(matriz,busqueda):
     print("Metodo secuencia")
     inicio = time.time()
-
+    result = 0
     for i in matriz:
         for elemento in i:
             if busqueda.lower() in str(elemento).lower():
-                print(i)
+                imprimir_datos(i)
                 break
     
     fin = time.time()
